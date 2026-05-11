@@ -1,47 +1,28 @@
-# Suanpak Project
+Suanpak Project
 
-��ਡ�������͡�� Frontend ��� Backend ���͡�èѴ��÷����¢��
+โปรเจกต์นี้แบ่งออกเป็น 2 ส่วน เพื่อให้จัดการและพัฒนาได้ง่ายขึ้น
 
-## �ç���ҧ��ਡ��
+frontend/ สำหรับส่วนติดต่อผู้ใช้ พัฒนาด้วย React + Vite
+backend/ สำหรับระบบหลังบ้าน พัฒนาด้วย Node.js + Express
+วิธีรัน Frontend และ Backend พร้อมกัน
 
-- `frontend/` - �ͻ���पѹ Frontend (React + Vite)
-- `backend/` - �ͻ���पѹ Backend (Node.js + Express)
-
-## ����ѹ Frontend ��� Backend ������ѹ
-
-1. �Դ��� dependencies �ͧ Backend:
-
-```bash
+ติดตั้ง dependencies ของ Backend
 cd backend
 npm install
-```
-
-2. �Դ��� dependencies �ͧ Frontend:
-
-```bash
+ติดตั้ง dependencies ของ Frontend
 cd ../frontend
 npm install
-```
-
-3. �Դ Backend:
-
-```bash
+เปิด Backend
 cd ../backend
 npm start
-```
-
-4. �Դ Frontend ��ա�����Թ��˹��:
-
-```bash
+เปิด Frontend ในอีกเทอร์มินัลหนึ่ง
 cd ../frontend
 npm run dev
-```
+API ที่มีอยู่ตอนนี้
 
-## API ������������
-
-- `GET /api/health`
-- `GET /api/categories`
-- `GET /api/products`
-- `GET /api/products/:id`
-
-> Frontend �١��駤����� proxy �Ӣ� `/api` ��ѧ `http://localhost:4000` ���ѵ��ѵ�
+GET /api/health
+GET /api/categories
+GET /api/products
+GET /api/products/:id
+หมายเหตุ
+Frontend ถูกตั้งค่าให้ส่งคำขอที่ขึ้นต้นด้วย /api ไปยัง http://localhost:4000 อัตโนมัติ
