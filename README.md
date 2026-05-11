@@ -25,7 +25,6 @@ backend/ สำหรับระบบหลังบ้าน พัฒนา�
 
 ติดตั้ง dependencies ของ Backend
 
->>>>>>> 7b5f8cf1dfe49497d7d94848ac073a71b7f94b45
 cd backend
 
 npm install
@@ -36,7 +35,6 @@ Frontend:
 =======
 ติดตั้ง dependencies ของ Frontend
 
->>>>>>> 7b5f8cf1dfe49497d7d94848ac073a71b7f94b45
 cd ../frontend
 
 npm install
