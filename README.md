@@ -1,47 +1,64 @@
 # Suanpak Project
 
-��ਡ�������͡�� Frontend ��� Backend ���͡�èѴ��÷����¢��
+เว็บแอปพลิเคชัน e-commerce สำหรับเกษตรกรขายสินค้าสดใหม่ (ผัก ผลไม้ เป็นต้น) ออนไลน์
 
-## �ç���ҧ��ਡ��
+## โครงสร้างโปรเจกต์
 
-- `frontend/` - �ͻ���पѹ Frontend (React + Vite)
-- `backend/` - �ͻ���पѹ Backend (Node.js + Express)
+- `frontend/` - เฟรนเทนด์ (React + TypeScript + Vite)
+- `backend/` - แบ็กเทนด์ (Node.js + Express)
 
-## ����ѹ Frontend ��� Backend ������ѹ
+## การติดตั้งและรัน
 
-1. �Դ��� dependencies �ͧ Backend:
+### 1. ติดตั้ง Dependencies
 
+Backend:
 ```bash
 cd backend
 npm install
 ```
 
-2. �Դ��� dependencies �ͧ Frontend:
-
+Frontend:
 ```bash
 cd ../frontend
 npm install
 ```
 
-3. �Դ Backend:
+### 2. รัน Application
 
+รัน Backend (terminal ที่ 1):
 ```bash
-cd ../backend
+cd backend
 npm start
 ```
+Backend จะทำงานที่ http://localhost:4000
 
-4. �Դ Frontend ��ա�����Թ��˹��:
-
+รัน Frontend (terminal ที่ 2):
 ```bash
-cd ../frontend
+cd frontend
 npm run dev
 ```
+Frontend จะทำงานที่ http://localhost:5173
 
-## API ������������
+## ฟีเจอร์หลัก
 
-- `GET /api/health`
-- `GET /api/categories`
-- `GET /api/products`
-- `GET /api/products/:id`
+- 🛍️ Shop - ดูและซื้อสินค้าจากเกษตรกร
+- 👨‍🌾 Farmer - เกษตรกรเพิ่มและจัดการสินค้า
+- 🛒 Cart & Checkout - สินค้าและการจ่ายเงิน
+- 👤 User Profile - จัดการบัญชีผู้ใช้
+- ⚙️ Admin Panel - จัดการสินค้า, ผู้ใช้, และฟีดแบ็ก
+- 📧 Authentication - ลงทะเบียน, เข้าสู่ระบบ, เปลี่ยนรหัสผ่าน
 
-> Frontend �١��駤����� proxy �Ӣ� `/api` ��ѧ `http://localhost:4000` ���ѵ��ѵ�
+## API Endpoints
+
+- `GET /api/products` - ดึงรายการสินค้าทั้งหมด
+- `GET /api/categories` - ดึงหมวดหมู่สินค้า
+- `GET /api/products/:id` - ดึงสินค้าตามรหัส
+- `POST /api/auth/register` - ลงทะเบียนผู้ใช้ใหม่
+- `POST /api/auth/login` - เข้าสู่ระบบ
+- `POST /api/farmer/products` - เกษตรกรเพิ่มสินค้า
+- `POST /api/admin/products` - Admin เพิ่มสินค้า
+- และอื่น ๆ อีกมากมาย
+
+## หมายเหตุ
+
+Frontend ใช้ proxy ที่ชี้ไปยัง `/api` = `http://localhost:4000` ในโหมด development

@@ -1,3 +1,8 @@
+cd "c:\Users\User\Desktop\Suanpak"
+git remote add origin https://github.com/yabaina/suanpak.git
+git branch -M main
+git push -u origin main
+
 name: CI
 
 on:
