@@ -104,4 +104,3 @@ GET /api/products/:id
 
 หมายเหตุ
 Frontend ถูกตั้งค่าให้ส่งคำขอที่ขึ้นต้นด้วย /api ไปยัง http://localhost:4000 อัตโนมัติ
->>>>>>> 7b5f8cf1dfe49497d7d94848ac073a71b7f94b45
