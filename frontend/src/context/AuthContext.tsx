@@ -55,7 +55,7 @@ async function safeFetch(path: string, options: RequestInit = {}) {
     ...options,
   });
   console.log('Response status:', response.status);
-  let body = {};
+  let body: any = {};
   try {
     body = await response.json();
     console.log('Response body:', body);

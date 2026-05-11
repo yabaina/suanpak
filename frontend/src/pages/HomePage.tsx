@@ -127,7 +127,7 @@ export default function HomePage({ onNavigate }: Props) {
           </div>
           <div className="promo-slider">
             <div className="promo-track" style={{ transform: `translateY(-${activePromo * 100}%)` }}>
-              {PROMOTIONS.map((item, index) => (
+              {PROMOTIONS.map((item) => (
                 <div className="promo-card" key={item.title}>
                   <div>
                     <div className="promo-badge">{item.badge}</div>
