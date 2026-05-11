@@ -1,0 +1,47 @@
+[
+  {
+    "name": "Admin",
+    "email": "admin@suanpak.com",
+    "password": "admin123",
+    "phone": "0812345678",
+    "createdAt": "2026-04-12T00:00:00.000Z",
+    "role": "admin",
+    "address": {
+      "line1": "123 Admin Street",
+      "city": "Bangkok",
+      "province": "Bangkok",
+      "postcode": "10000"
+    },
+    "orders": []
+  },
+  {
+    "name": "HUhi",
+    "email": "huhi@gmail.com",
+    "password": "1234",
+    "phone": "0801234567",
+    "createdAt": "2026-04-11T17:28:29.316Z",
+    "role": "customer",
+    "address": {
+      "line1": "",
+      "city": "",
+      "province": "",
+      "postcode": ""
+    },
+    "orders": []
+  },
+  {
+    "name": "Farmer Jai",
+    "email": "farmer1@example.com",
+    "password": "farmer123",
+    "phone": "0811111111",
+    "createdAt": "2026-04-12T00:00:00.000Z",
+    "role": "farmer",
+    "address": {
+      "line1": "123 Farm Road",
+      "city": "Chiang Mai",
+      "province": "Chiang Mai",
+      "postcode": "50000"
+    },
+    "orders": []
+  }
+]

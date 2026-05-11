@@ -1,0 +1,247 @@
+.home-page {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.home-hero {
+  background: linear-gradient(135deg, rgba(59,109,17,0.94), rgba(138,195,74,0.95));
+  color: white;
+  padding: 60px 24px;
+}
+
+.home-hero-content {
+  max-width: 1160px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 28px;
+  align-items: center;
+}
+
+.home-copy {
+  max-width: 560px;
+}
+
+.hero-badge {
+  display: inline-block;
+  margin-bottom: 18px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.85);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.hero-title {
+  font-family: 'Kanit', sans-serif;
+  font-size: clamp(38px, 5vw, 56px);
+  line-height: 1.04;
+  margin-bottom: 18px;
+}
+
+.hero-text {
+  font-size: 16px;
+  line-height: 1.8;
+  max-width: 520px;
+  color: rgba(255,255,255,0.92);
+  margin-bottom: 28px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.promo-slider {
+  width: 100%;
+  max-width: 520px;
+  min-height: 220px;
+  overflow: hidden;
+  position: relative;
+}
+
+.promo-track {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.5s ease;
+}
+
+.promo-card {
+  min-height: 220px;
+  width: 100%;
+  background: rgba(255,255,255,0.16);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 24px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+  backdrop-filter: blur(10px);
+}
+
+.promo-card h2 {
+  font-size: 28px;
+  margin: 0;
+}
+
+.promo-card p {
+  color: rgba(255,255,255,0.92);
+  margin: 0;
+  line-height: 1.7;
+}
+
+.promo-badge {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.2);
+  color: rgba(255,255,255,0.95);
+  font-size: 12px;
+  letter-spacing: 0.4px;
+  font-weight: 700;
+}
+
+.promo-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.promo-dots-vertical {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  gap: 22px;
+}
+
+.promo-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.2);
+  cursor: pointer;
+  transition: transform 0.2s, background 0.2s;
+}
+
+.promo-dot.active {
+  background: white;
+  transform: scale(1.15);
+}
+
+.promo-dot.active {
+  background: white;
+}
+
+.home-section {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 24px 40px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.section-header h2 {
+  font-size: 28px;
+  margin: 0;
+}
+
+.section-header p {
+  color: var(--muted);
+  margin: 6px 0 0;
+}
+
+.featured-grid {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scroll-snap-type: x mandatory;
+}
+
+.featured-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.featured-grid::-webkit-scrollbar-thumb {
+  background: rgba(59, 109, 17, 0.35);
+  border-radius: 999px;
+}
+
+.featured-grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.featured-card {
+  min-width: 260px;
+  flex: 0 0 260px;
+  background: white;
+  border-radius: 20px;
+  border: 1px solid #f1f2ef;
+  box-shadow: var(--shadow-sm);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  scroll-snap-align: start;
+}
+
+.featured-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.featured-emoji {
+  font-size: 32px;
+}
+
+.featured-category {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--green);
+  background: var(--green-pale);
+  border-radius: 999px;
+  padding: 6px 12px;
+}
+
+.featured-card h3 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.featured-price {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+@media (max-width: 940px) {
+  .home-hero-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-hero {
+    padding: 40px 16px;
+  }
+  .home-section {
+    padding: 0 16px 32px;
+  }
+}

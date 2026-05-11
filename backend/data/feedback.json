@@ -1,0 +1,20 @@
+[
+  {
+    "id": "fb-001",
+    "type": "product",
+    "userEmail": "test_reg2@example.com",
+    "subject": "สินค้าชำรุด",
+    "message": "มะเขือเทศที่ได้รับมาชำรุด",
+    "status": "pending",
+    "createdAt": "2026-04-12T10:00:00.000Z"
+  },
+  {
+    "id": "fb-002",
+    "type": "store",
+    "userEmail": "moiky69@gmail.com",
+    "subject": "บริการดีมาก",
+    "message": "พนักงานบริการดีมาก สินค้าคุณภาพ",
+    "status": "resolved",
+    "createdAt": "2026-04-11T15:30:00.000Z"
+  }
+]

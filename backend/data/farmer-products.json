@@ -1,0 +1,50 @@
+[
+  {
+    "id": "fp-001",
+    "farmerEmail": "farmer1@example.com",
+    "name": "มะม่วงบ้านดอง",
+    "category": "fruit",
+    "price": 60,
+    "description": "มะม่วงดองเองจากสวนบ้าน อร่อยมาก",
+    "unit": "แพค",
+    "stock": 50,
+    "status": "approved",
+    "createdAt": "2026-04-12T08:00:00.000Z"
+  },
+  {
+    "id": "fp-002",
+    "farmerEmail": "farmer2@example.com",
+    "name": "ผักสลัดสด",
+    "category": "veg",
+    "price": 35,
+    "description": "ผักสลัดปลูกเอง สดใหม่ทุกวัน",
+    "unit": "แพค",
+    "stock": 30,
+    "status": "pending",
+    "createdAt": "2026-04-12T09:00:00.000Z"
+  },
+  {
+    "id": "fp-1775933328271",
+    "farmerEmail": "farmer1@example.com",
+    "name": "ตุ้มจิ๋ว",
+    "category": "fruit",
+    "price": 100,
+    "description": "แหนมแซ่บๆ",
+    "unit": "ชิ้น",
+    "stock": 69,
+    "status": "rejected",
+    "createdAt": "2026-04-11T18:48:48.271Z"
+  },
+  {
+    "id": "fp-1775933561245",
+    "farmerEmail": "farmer1@example.com",
+    "name": "แหนม",
+    "category": "processed",
+    "price": 100,
+    "description": "แหนมแซ่บๆ",
+    "unit": "ชิ้น",
+    "stock": 2,
+    "status": "pending",
+    "createdAt": "2026-04-11T18:52:41.245Z"
+  }
+]

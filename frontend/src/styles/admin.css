@@ -1,0 +1,452 @@
+.admin-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.admin-header h1 {
+  color: #2c3e50;
+  margin: 0;
+}
+
+.back-btn {
+  background: #27ae60;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.back-btn:hover {
+  background: #2980b9;
+}
+
+.admin-tabs {
+  display: flex;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #ddd;
+}
+
+.admin-tabs button {
+  background: none;
+  border: none;
+  padding: 15px 25px;
+  cursor: pointer;
+  font-size: 16px;
+  border-bottom: 3px solid transparent;
+  color: #27ae60;
+  transition: all 0.3s;
+}
+
+.admin-tabs button.active {
+  border-bottom-color: #27ae60;
+  color: #1d7a33;
+  font-weight: bold;
+}
+
+.admin-tabs button:hover {
+  background: #f0f8f0;
+}
+
+.admin-content {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 30px;
+}
+
+/* Products Tab */
+.products-tab h2 {
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+
+.product-form {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.product-form h3 {
+  margin-top: 0;
+  color: #34495e;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.form-row input,
+.form-row select {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  background: #ffffff;
+}
+
+.add-btn {
+  background: #27ae60;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.add-btn:hover {
+  background: #229954;
+}
+
+.products-list {
+  display: grid;
+  gap: 15px;
+}
+
+.product-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  background: white;
+}
+
+.product-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.product-info .emoji {
+  font-size: 24px;
+}
+
+.product-info .name {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.product-info .price {
+  color: #27ae60;
+  font-weight: bold;
+}
+
+.product-info .unit {
+  color: #7f8c8d;
+}
+
+.delete-btn {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background: #c0392b;
+}
+
+/* Feedback Tab */
+.feedback-tab h2 {
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+
+.feedback-form {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+}
+
+.feedback-form h3 {
+  margin-top: 0;
+  color: #34495e;
+}
+
+.feedback-form textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+  min-height: 80px;
+  margin-top: 10px;
+  resize: vertical;  background: #ffffff;}
+
+.submit-btn {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.submit-btn:hover {
+  background: #2980b9;
+}
+
+.feedback-list {
+  display: grid;
+  gap: 20px;
+}
+
+.feedback-item {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  background: white;
+}
+
+.feedback-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.feedback-header .type {
+  background: #3498db;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.feedback-header .subject {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.feedback-header .status {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.status.pending {
+  background: #f39c12;
+  color: white;
+}
+
+.status.resolved {
+  background: #27ae60;
+  color: white;
+}
+
+.status.ignored {
+  background: #95a5a6;
+  color: white;
+}
+
+.feedback-item .message {
+  color: #555;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.feedback-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  color: #7f8c8d;
+}
+
+.status-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.resolve-btn {
+  background: #27ae60;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.ignore-btn {
+  background: #95a5a6;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+/* Farmers Tab */
+.farmers-tab h2 {
+  color: #2c3e50;
+  margin-bottom: 30px;
+}
+
+.farmer-products-list {
+  display: grid;
+  gap: 20px;
+}
+
+.farmer-product-item {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.product-info h4 {
+  margin: 0 0 10px 0;
+  color: #2c3e50;
+}
+
+.product-info p {
+  color: #555;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.product-details {
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+  color: #7f8c8d;
+}
+
+.product-status {
+  text-align: right;
+}
+
+.product-status .status {
+  display: block;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.status.pending {
+  background: #f39c12;
+  color: white;
+}
+
+.status.approved {
+  background: #27ae60;
+  color: white;
+}
+
+.status.rejected {
+  background: #e74c3c;
+  color: white;
+}
+
+.status-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.approve-btn {
+  background: #27ae60;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.reject-btn {
+  background: #e74c3c;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+/* Loading and Error */
+.loading, .error {
+  text-align: center;
+  padding: 50px;
+  font-size: 18px;
+}
+
+.error {
+  color: #e74c3c;
+  background: #fdf2f2;
+  border: 1px solid #f5c6cb;
+  border-radius: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .admin-page {
+    padding: 10px;
+  }
+
+  .admin-header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .admin-tabs {
+    flex-wrap: wrap;
+  }
+
+  .admin-tabs button {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .product-item {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .farmer-product-item {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .feedback-footer {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+}
