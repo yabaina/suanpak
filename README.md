@@ -3,8 +3,8 @@ Suanpak Project
 
 ## โครงสร้างโปรเจกต์
 
-- `frontend/` - เฟรนเทนด์ (React + TypeScript + Vite)
-- `backend/` - แบ็กเทนด์ (Node.js + Express)
+- `frontend/` - (React + TypeScript + Vite)
+- `backend/` - (Node.js + Express)
 
 ## การติดตั้งและรัน
 
