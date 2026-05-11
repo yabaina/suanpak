@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import type { NavigateFn } from "../types/navigation";
 import type { Product, Category } from "../data/products";
 import { useAuth } from "../context/AuthContext";
@@ -57,15 +57,7 @@ export default function AdminPage({ onNavigate }: Props) {
     message: "",
   });
 
-  useEffect(() => {
-    if (user?.role !== "admin") {
-      onNavigate("home");
-      return;
-    }
-    loadData();
-  }, [user, onNavigate]);
-
-  const loadData = async () => {
+  const loadData = useCallback(async () => {
     try {
       setLoading(true);
       const [productsRes, categoriesRes, feedbackRes, farmerRes] = await Promise.all([
@@ -105,7 +97,15 @@ export default function AdminPage({ onNavigate }: Props) {
     } finally {
       setLoading(false);
     }
-  };
+  }, [user?.email]);
+
+  useEffect(() => {
+    if (user?.role !== "admin") {
+      onNavigate("home");
+      return;
+    }
+    loadData();
+  }, [loadData, onNavigate, user?.role]);
 
   const handleAddProduct = async (e: React.FormEvent) => {
     e.preventDefault();

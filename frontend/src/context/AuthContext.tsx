@@ -46,6 +46,10 @@ interface AuthContextValue {
 const AuthContext = createContext<AuthContextValue | null>(null);
 const API_URL = "/api";
 
+type ApiResponseBody = Record<string, unknown> & {
+  user?: User;
+};
+
 async function safeFetch(path: string, options: RequestInit = {}) {
   console.log('Making request to:', `${API_URL}${path}`, options);
   const response = await fetch(`${API_URL}${path}`, {
@@ -55,9 +59,9 @@ async function safeFetch(path: string, options: RequestInit = {}) {
     ...options,
   });
   console.log('Response status:', response.status);
-  let body: any = {};
+  let body: ApiResponseBody = {};
   try {
-    body = await response.json();
+    body = (await response.json()) as ApiResponseBody;
     console.log('Response body:', body);
   } catch (error) {
     console.log('Failed to parse response:', error);
@@ -75,7 +79,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       method: "POST",
       body: JSON.stringify({ email, password }),
     });
-    if (!response.ok) return false;
+    if (!response.ok || !body.user) return false;
     setUser(body.user);
     return true;
   };
@@ -87,7 +91,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       body: JSON.stringify({ name, email, password, phone }),
     });
     console.log('Registration response:', response.status, body);
-    if (!response.ok) {
+    if (!response.ok || !body.user) {
       console.error("Registration failed:", body);
       return false;
     }
@@ -101,7 +105,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       method: "POST",
       body: JSON.stringify({ email: user.email, ...data }),
     });
-    if (!response.ok) return false;
+    if (!response.ok || !body.user) return false;
     setUser(body.user);
     return true;
   };
@@ -132,6 +136,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   );
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useAuth = () => {
   const context = useContext(AuthContext);
   if (!context) {

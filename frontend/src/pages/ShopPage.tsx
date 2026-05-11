@@ -78,7 +78,7 @@ export default function ShopPage({ onNavigate, initialCategory, search, onSearch
     return matchCat && (normalizedSearch === "" || matchSearch);
   });
 
-  const handleAdd = (product: any) => {
+  const handleAdd = (product: Product) => {
     if (!user) {
       onNavigate("login");
       return;

@@ -1,16 +1,23 @@
 import fs from "fs/promises";
+import path from "path";
+import { fileURLToPath } from "url";
 import express from "express";
 import cors from "cors";
 import { PRODUCTS, CATEGORIES } from "./data/products.js";
 
 const app = express();
 const port = process.env.PORT || 4000;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 const usersFile = new URL("./data/users.json", import.meta.url);
 const feedbackFile = new URL("./data/feedback.json", import.meta.url);
 const farmerProductsFile = new URL("./data/farmer-products.json", import.meta.url);
 
 app.use(cors());
 app.use(express.json());
+
+const frontendBuildPath = path.join(__dirname, "../frontend/dist");
+app.use(express.static(frontendBuildPath));
 
 async function loadUsers() {
   try {
@@ -332,6 +339,13 @@ app.post("/api/auth/update-password", async (req, res) => {
   user.password = newPassword;
   await saveUsers(users);
   res.json({ message: "เปลี่ยนรหัสผ่านเรียบร้อยแล้ว" });
+});
+
+app.get("*", (req, res) => {
+  if (req.path.startsWith("/api")) {
+    return res.status(404).json({ error: "API route not found" });
+  }
+  res.sendFile(path.join(frontendBuildPath, "index.html"));
 });
 
 app.listen(port, () => {

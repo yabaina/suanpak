@@ -1,5 +1,5 @@
 import { useAuth } from "../context/AuthContext";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import type { NavigateFn } from "../types/navigation";
 import "../styles/profile.css";
 
@@ -16,34 +16,25 @@ type Address = {
   postcode: string;
 };
 
+const EMPTY_ADDRESS: Address = {
+  line1: "",
+  city: "",
+  province: "",
+  postcode: "",
+};
+
 export default function ProfilePage({ onNavigate }: Props) {
   const { user, logout, updateUser, changePassword } = useAuth();
   const [activeTab, setActiveTab] = useState<ProfileTab>("info");
   const [isEditing, setIsEditing] = useState(false);
   const [name, setName] = useState(user?.name ?? "");
   const [phone, setPhone] = useState(user?.phone ?? "");
-  const [address, setAddress] = useState<Address>(user?.address ?? {
-    line1: "",
-    city: "",
-    province: "",
-    postcode: "",
-  });
+  const [address, setAddress] = useState<Address>(user?.address ?? EMPTY_ADDRESS);
   const [currentPassword, setCurrentPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [message, setMessage] = useState("");
   const [error, setError] = useState("");
-
-  useEffect(() => {
-    setName(user?.name ?? "");
-    setPhone(user?.phone ?? "");
-    setAddress(user?.address ?? {
-      line1: "",
-      city: "",
-      province: "",
-      postcode: "",
-    });
-  }, [user]);
 
   const handleLogout = () => {
     logout();
@@ -232,7 +223,14 @@ export default function ProfilePage({ onNavigate }: Props) {
                   </button>
                 </>
               ) : (
-                <button className="btn btn-danger btn-sm" onClick={() => setIsEditing(true)}>
+                <button
+                  className="btn btn-danger btn-sm"
+                  onClick={() => {
+                    setName(user.name);
+                    setPhone(user.phone ?? "");
+                    setIsEditing(true);
+                  }}
+                >
                   แก้ไขข้อมูลบัญชี
                 </button>
               )}
