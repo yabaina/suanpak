@@ -27,7 +27,7 @@ cd backend
 
 npm install
 
-<<<<<<< HEAD
+
 Frontend:
 ```bash
 =======
@@ -37,7 +37,7 @@ cd ../frontend
 
 npm install
 
-<<<<<<< HEAD
+
 ### 2. รัน Application
 
 รัน Backend (terminal ที่ 1):
